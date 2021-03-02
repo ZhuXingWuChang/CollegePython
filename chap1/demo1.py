@@ -10,7 +10,7 @@ print("Hello World")
 print(3 + 1)
 
 # 输出到文件中
-fp = open('D:/CollegePython/text.txt', 'a+')
+fp = open('/text.txt', 'a+')
 print('helloworld', file=fp)
 fp.close()
 
