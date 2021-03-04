@@ -27,3 +27,16 @@ print(int(f1), type(int(f1)))  # float转换成int，会阶段
 # print(int(s2), type(int(s2))) #带小数点，所以报错了，这不是纯数字串
 print(int(ff), type(int(ff)))
 # print(int(s3), type(int(s3))) #同样会报错
+
+print('----------int()将其他类型转换为int类型----------------')
+s1 = '128.98'
+s2 = '76'
+ff = True
+s3 = 'hello'
+i = 98
+print(type(s1), type(s2), type(ff), type(s3), type(i))
+print(float(s1), type(float(s1)))  # 小数字符串可以直接转
+print(float(s2), type(float(s2)))  # 整数字符串也可以
+print(float(ff), type(float(ff)))  # True==1,也可以
+# print(float(s3), type(float(s3)))  # 非数字串，会报错
+print(float(i), type(float(i)))
