@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ---------------------------python的注释---------------------------
 # 单行注释
 
@@ -116,8 +115,6 @@
 # print(type(eval(str3)))
 # print(type(eval(str4)))  # 如果语法不对，那么会抛出异常
 
-# ---------------------------运算符---------------------------
-=======
 # --------------------运算符--------------------
 # print(8 / 3)  # 除法，会返回一个浮点数
 # print(8 // 3)  # 整除，会返回一个整型数
@@ -158,13 +155,18 @@ python有逻辑运算符and or not，这些运算符可以进行比较操作
 # print(not c)  # 布尔运算
 
 # --------------------条件运算符--------------------
+'''
+实例：网吧上网
+'''
 # age = int(input('请输入您的年龄：'))  # 这里还要将str转换为int
 # if age >= 18:
 #     print(f'您的年龄是{age}，已经成年，可以上网')
 # else:
 #     print(f'您的年龄是{age}，未成年，不能上网')
 # print('系统关闭')
-
+'''
+实例：工龄判断
+'''
 # age = int(input('请输入您的年龄：'))
 # if age < 18:
 #     print(f'您的年龄是{age}，童工一枚')
@@ -172,7 +174,9 @@ python有逻辑运算符and or not，这些运算符可以进行比较操作
 #     print(f'您的年龄是{age}，合法工龄')
 # elif age > 60:
 #     print(f'您的年龄是{age}，可以退休')
-
+'''
+实例：坐公交
+'''
 # money = 1  # 假设用money=1表示有钱，money=0表示没钱
 # seat = 0
 # if money == 1:
@@ -183,4 +187,190 @@ python有逻辑运算符and or not，这些运算符可以进行比较操作
 #         print('没有空座')
 # else:
 #     print('没钱，下车')
->>>>>>> origin/main
+'''
+初始版：猜拳游戏
+提示：0-石头，1-剪刀，2-布
+3.出拳：玩家输入出拳；电脑随机出拳
+4.判断输赢：玩家获胜；平局；电脑获胜
+'''
+# import random  # 导入random模块
+#
+# computer = random.randint(0, 2)  # 电脑在0和2之间随机选择数字（包括0和2）
+# print(computer)
+# player = int(input("请出拳：0-石头，1-剪刀，2-布："))
+# if (player == 0 and computer == 1) or (player == 1 and computer == 2) or (player == 2 and computer == 0):
+#     print('玩家获胜')
+# elif player == computer:
+#     print('平局')
+# else:
+#     print('电脑获胜')
+
+'''
+进阶版：猜拳游戏
+'''
+# import random
+# import sys
+#
+# print("-----欢迎来到人机对战小游戏-----")
+# name = input('请输入您的游戏名：')
+# while True:
+#     stats = input('欢迎"%s"来到本游戏，输入Y开始游戏，输入N推出游戏，请您输入：' % name)
+#     if stats == 'Y' or stats == 'y':
+#         print('游戏开始......')
+#         print('0-石头，1-剪刀，2-布')
+#         break
+#     elif stats == 'N' or stats == 'n':
+#         print('游戏结束......')
+#         sys.exit(0)
+#     else:
+#         print('请按照要求重新输入！')
+# print('------------加载中------------')
+#
+#
+# def Game(user, comp):
+#     if (user == 0 and comp == 1) or (user == 1 and comp == 2) or (user == 2 and comp == 0):
+#         print("机器输入%d，您赢了！" % comp)
+#     elif user == comp:
+#         print("机器输入%d，平局了！" % comp)
+#     else:
+#         print("机器输入%d，您输了！" % comp)
+#     res = input("重新游戏请输入x，退出游戏按任意键")
+#     if res == 'x' or res == 'X':
+#         return
+#     else:
+#         sys.exit(0)
+#
+#
+# while True:
+#     user = int(input('请您出拳，输入相应数字！'))
+#     if user == 0 or user == 1 or user == 2:
+#         comp = random.randint(0, 2)
+#         Game(user, comp)
+#     else:
+#         print('输入数字有误，请确认后，重新输入！')
+
+# ------------三目运算符------------
+# a = 1
+# b = 2
+#
+# c = a if a > b else b
+# print(c)
+
+# ------------while循环------------
+'''
+应用一：计算1~100累加和
+'''
+# i = 1
+# result = 0
+# while i <= 100:
+#     result += i
+#     i += 1
+# print(result)
+'''
+应用二：计算1~100偶数累加和
+'''
+# # 方法一：条件判断，如果模2为0，则是偶数，累加
+# i = 1
+# result = 0
+# while i <= 100:
+#     if i % 2 == 0:
+#         result += i
+#     i += 1
+# print(result)
+# # 方法二：计数器控制增量为2
+# i = 0
+# result = 0
+# while i <= 100:
+#     result += i
+#     i += 2
+# print(result)
+
+# ------------break和continue------------
+'''
+break实例
+'''
+# i = 1
+# while i <= 5:
+#     if i == 4:
+#         print(f'吃饱了不吃了')
+#         break
+#     print(f'吃了第{i}个苹果')
+#     i += 1
+'''
+continue实例
+'''
+# i = 1
+# while i <= 5:
+#     if i == 3:
+#         print(f'大虫子，第{i}个不吃了')
+#         i += 1
+#         continue
+#     print(f'吃了第{i}个苹果')
+#     i += 1
+
+# ------------while循环嵌套------------
+'''
+应用一：打印星号（正方形）
+'''
+# j = 0
+# while j <= 4:
+#     i = 0
+#     while i <= 4:
+#         print('*', end='')
+#         i += 1
+#     print()
+#     j += 1
+'''
+应用二：打印星号（三角形）
+'''
+# j = 0
+# while j <= 4:
+#     i = 0
+#     while i <= j:
+#         print('*', end='')
+#         i += 1
+#     print()
+#     j += 1
+'''
+应用三：打印星号（三角形）
+'''
+# j = 1
+# while j <= 9:
+#     i = 1
+#     while i <= j:
+#         print(f'{i}*{j}={i * j}', end='\t')
+#         i += 1
+#     print()
+#     j += 1
+
+# ------------for循环------------
+'''
+for循环语法如下
+for 临时变量 in 序列:
+    循环体
+'''
+# str1 = 'Hello World'
+# for i in str1:
+#     print(i)
+
+# str1 = 'Hello World'
+# for i in str1:
+#     if i == 'e':
+#         print('遇到e不打印')
+#         break
+#     print(i)
+
+# str1 = 'Hello World'
+# for i in str1:
+#     if i == 'e':
+#         print('遇到e不打印')
+#         continue
+#     print(i)
+
+# ------------while...else------------
+'''
+while 条件:
+    条件成立重复执行的代码
+else:
+    循环正常结束后要执行的代码
+'''
