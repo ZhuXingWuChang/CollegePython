@@ -374,3 +374,336 @@ while 条件:
 else:
     循环正常结束后要执行的代码
 '''
+# 示例
+# i = 1
+# while i <= 5:
+#     print('Hello World')
+#     i += 1
+# else:
+#     print('执行完毕')
+
+# break终止循环
+# i = 1
+# while i <= 5:
+#     if i == 3:
+#         print('提前结束')
+#         break
+#     print('Hello World')
+#     i += 1
+# else:
+#     print('执行完毕')
+
+# continue控制循环
+# i = 1
+# while i <= 5:
+#     if i == 3:
+#         print('打断一下')
+#         i += 1
+#         continue
+#     print('Hello World')
+#     i += 1
+# else:
+#     print('执行完毕')
+
+# ------------for...else------------
+'''
+for 临时变量 in 序列:
+    重复执行的代码
+    ...
+else:
+    循环正常结束之后要执行的代码
+'''
+# 示例
+# str1 = 'Hello World'
+# for i in str1:
+#     print(i)
+# else:
+#     print('循环正常结束之后执行的代码')
+
+# break终止循环
+# str1 = 'Hello World'
+# for i in str1:
+#     if i == 'e':
+#         print('遇到e不打印')
+#         break
+#     print(i)
+# else:
+#     print('循环正常结束之后执行的代码')
+
+# continue控制循环
+# str1 = 'Hello World'
+# for i in str1:
+#     if i == 'e':
+#         print('遇到e不打印')
+#         continue
+#     print(i)
+# else:
+#     print('循环正常结束后执行的代码')
+
+# ------------字符串------------
+# a = 'Hello World'
+# b = "abcdefg"
+# print(type(a))
+# print(type(b))
+
+# name1 = 'Tom'  # 单引号字符串
+# name2 = "Rose"  # 双引号字符串
+# name3 = '''Tom'''  # 三单引号字符串
+# name4 = """Rose"""  # 三双引号字符串
+# a = ''' I am Tom,
+#         nice to meet you! '''
+# b = """ I am Rose,
+#         nice to meet you! """
+# print(a, '\n', b)
+
+# c = "I'm Tom"
+# d = 'I\'m Tom'
+
+# print('hello world')
+#
+# name = 'Tom'
+# print('My name\'s %s' % name)
+# print(f"My name's {name}")
+
+# 在Python中，用户用input输出的都是字符串
+# name = input('Type in your name, please:')
+# print(f'Your name\'s {name}')
+# print(type(name))
+# password = input('Type in your password, please:')
+# print(f"Your password's {password}")
+# print(type(password))
+
+# 字符串的下标，即字符串的索引
+# name = "abcdef"
+# print(name[1])
+# print(name[0])
+# print(name[2])
+
+# ------------字符串的切片操作------------
+'''
+序列[开始位置的下标:结束位置的下标:步长]
+'''
+# name = "abcdef"
+# print(name[2:5:1])
+# print(name[2:5])
+# print(name[:5])
+# print(name[1:])
+# print(name[:])
+# print(name[::2])
+# print(name[:-1])  # -1表示倒数第一个数据, 所以这个地方输出到f前面停下
+# print(name[-4:-1])
+# print(name[::-1])
+
+# ------------字符串的查找------------
+'''
+所谓查找就是查找子串在字符串中出现的位置，或出现的次数
+find(): 检测某个子串是否在字符串中，如果在，返回下标，否则返回-1
+语法:
+字符串对象.find(子串, 开始位置的下标, 结束位置的下标)
+'''
+# myStr = "Hello world and string and list and Python"
+# print(myStr.find('and'))  # 返回整个字符串内第一个and的首地址
+# print(myStr.find('and', 15, 30))  # 返回15到30下标内第一个and的首地址
+# print(myStr.find('ands'))  # 字符串里面没有这个，返回-1
+
+'''
+index(): 检测某个子串是否包含在这个字符串中，如果在，返回下标，否则报异常
+语法:
+字符串对象.index(子串, 开始位置的下标, 结束位置的下标)
+'''
+# myStr = "Hello world and string and list and Python"
+# print(myStr.index('and'))
+# print(myStr.index('and', 15, 30))
+# print(myStr.index('aa'))
+
+'''
+rfind(): 和find()一样，但是查找方向是从右侧开始
+rindex(): 和index()一样，但是查找方向是从右侧开始
+
+count(): 返回某个子串在字符串中出现的次数
+语法:
+字符出对象.count(子串, 开始位置的下标, 结束位置的下标)
+'''
+# myStr = "Hello world and string and list and Python"
+# print(myStr.count('and'))
+# print(myStr.count('aa'))
+# print(myStr.count('and', 0, 21))
+
+# ------------字符串的修改------------
+'''
+所谓修改字符串，指的就是通过函数的形式修改字符串中的数据
+
+replace(): 替换字符串
+语法:
+字符串对象.replace(旧子串, 新子串, 替换次数)
+'''
+# myStr = "Hello world and string and list and Python"
+# print(myStr.replace('and', 'or'))
+# print(myStr.replace('and', 'or', 10))
+# print(myStr.replace('and', 'or', 1))  # 因为只替换1次，所以只有第一个and被or替换了
+# print(myStr)  # 和Java一样，Python的str属于不可变对象
+
+'''
+split(): 按照指定字符分割字符串，如果分割字符是原有字符串中的子串，分割后会丢失该子串
+语法
+字符串序列.split(分割字符, num)
+'''
+# print(myStr.split('and'))
+# print(myStr.split('and', 2))
+# print(myStr.split(' '))
+# print(myStr.split(' ', 2))
+# print(myStr.split('中文'))
+
+'''
+join(): 用一个字符或子串合并成新的字符串
+语法:
+字符类型或字符串对象.join(多字符串组成的序列)
+'''
+# list1 = ['hello', 'python', 'list']
+# t1 = ('aa', 'b', 'cc', 'ddd')
+# print('_'.join(list1))
+# print('...'.join(t1))
+
+'''
+capitalize(): 将字符串第一个字符转换成大写, 其余的小写
+'''
+# print('helLO'.capitalize())
+
+'''
+title(): 将字符串每个单词首字母转换成大写, 其余的小写
+'''
+# print('heLLo woRld aNd python'.title())
+
+'''
+lower(): 将字符串中大写转小写
+'''
+# print('HEllo WoRlD'.lower())
+
+'''
+upper(): 将字符串中小写转大写
+'''
+# print('HEllo WoRlD'.upper())
+
+# ------------逻辑表达式 判断------------
+'''
+startswith(): 检查字符串是否以指定子串开头，是则返回True，否则返回False。
+    如果设置开始和结束位置下标，则在指定范围内检查。
+语法:
+字符串对象.startswith(子串, 开始位置下标, 结束位置下标)
+'''
+# myStr = "Hello world and string and list and Python"
+# print(myStr.startswith('Hello'))
+# print(myStr.startswith('hello', 5, 20))
+
+'''
+endswith(): 检查字符串是否以指定子串结尾
+语法:
+字符串对象.endswith(子串， 开始位置下标, 结束位置下标)
+'''
+# myStr = "Hello world and string and list and Python"
+# print(myStr.endswith('Python'))
+# print(myStr.endswith("python"))
+# print(myStr.endswith('Python', 2, 20))
+
+'''
+isalpha(): 如果字符串非空，且内容都是字母，返回True，否则返回False
+'''
+# myStr1 = 'hello'
+# myStr2 = 'hello12345'
+# print(myStr1.isalpha())
+# print(myStr2.isalpha())
+
+'''
+isdigit(): 如果非空字符串中只包含数字，返回True，否则返回False
+'''
+# myStr1 = 'aaa12345'
+# myStr2 = '12345'
+# print(myStr1.isdigit())
+# print(myStr2.isdigit())
+
+'''
+isalnum(): 如果字符串中至少有一个字符，并且所有字符都是字母 或 数字，返回True，否则返回False
+'''
+# myStr1 = 'aaa12345'
+# myStr2 = '12.345'
+# print(myStr1.isalnum())
+# print(myStr2.isalnum())
+
+'''
+isspace(): 如果字符串中只包含空白，返回True，否则返回False
+'''
+# myStr1 = '1 2 3 4 5'
+# myStr2 = '         '
+# myStr3 = ''
+# print(myStr1.isspace())
+# print(myStr2.isspace())
+# print(myStr3.isspace())  # 空串是没有空白的
+
+# ------------列表------------
+'''
+[数据1, 数据2, 数据3, ......]
+列标可以存储不同类型的数据，并且可以重复
+对列表的后续操作可以有：增、删、减、改、查
+'''
+nameList = ['Tom', 'Lily', 'Rose', 'Lily', 1, 2]
+# print(nameList[0])
+# print(nameList[1])
+# print(nameList[2])
+# print(nameList.index('Lily', 0, 2))  # 从0开始，到2为止，不包含2
+# # print(nameList.index('Alice'))  # 会报错
+# print(nameList.count('Lily'))  # 统计出现次数
+# print(len(nameList))
+
+# print('Lily' in nameList)
+# print('Alice' in nameList)
+# print('Lily' not in nameList)
+# print('Alice' not in nameList)
+
+# nameList.append('xiaoming')
+# print(nameList)  # 由此可见，列表是可变对象
+
+# nameList.append(['xiaohu', '369'])
+# print(nameList)  # 会将这个列表整体作为一个数据添加到列表
+
+# nameList.extend('Karsa')  # 会把这些字符串拆开逐个添加到列表
+# nameList.extend('123')
+# print(nameList)
+
+# nameList.insert(0, 'Jiejie')
+# # del nameList  # 将整个内存都释放掉
+# del nameList[0]  # 删除指定下标的数据
+# print(nameList)
+
+# del_name = nameList.pop(1)
+# print(del_name)
+# print(nameList.pop())  # 默认删除最后一个
+# print(nameList)
+
+# nameList.remove('Lily') # remove会找到第一个对应的Lily并删除
+# print(nameList)
+
+# print(nameList.clear())  # 清空数据但是不释放内存
+# print(nameList)
+
+# nameList.reverse()  # 倒置
+# print(nameList)
+
+# nameList.sort()  # 只能对可比较的数据排序，所以会报错
+# numList = [1, 3, 5, 2, 4, 6, 9, 8, 7]
+# numList.sort()
+# print(numList)
+
+# nameList2 = nameList.copy()
+# print(nameList2)
+
+# i=0
+# while i<len(nameList):
+#     print(nameList[i])
+#     i+=1
+
+# for i in nameList:
+#     print(i)
+
+# name_list = [['小明', '小红', '小绿'], ['Tom', 'Lily', 'Rose'], ['张三', '李四', '王五']]
+# print(name_list[0])
+# print(name_list[0][1])
