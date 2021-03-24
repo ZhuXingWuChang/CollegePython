@@ -707,3 +707,183 @@ nameList = ['Tom', 'Lily', 'Rose', 'Lily', 1, 2]
 # name_list = [['小明', '小红', '小绿'], ['Tom', 'Lily', 'Rose'], ['张三', '李四', '王五']]
 # print(name_list[0])
 # print(name_list[0][1])
+
+# ------------元组------------
+'''
+元组里的数据可以是不同的数据类型
+和列表不同的是，元组里面的数据不支持修改，只支持查找
+'''
+# t1 = (10, 20, 30)
+# t2 = (10,)
+# print(type(t1))
+# print(type(t2))
+
+# tuple1 = ('aa', 'bb', 'cc', 'bb')
+# print(tuple1[0])
+# print(tuple1.index('aa'))
+# print(tuple1.count('bb'))
+# print(len(tuple1))
+
+'''
+直接修改元组里面的数据，是会报错的
+但是如果元组里面的某个数据是列表，可以修改这个列表里的数据
+'''
+# tuple2 = (10, 20, ['aa', 'bb', 'cc'], 50, 30)
+# # tuple2[0] = 0  # 会报错
+# print(tuple2[2])
+# tuple2[2][0] = 'dd'
+# print(tuple2)
+
+# ------------字典------------
+'''
+字典里面的数据是以K-V对出现的，字典数据和顺序无关，即字典不支持下标/索引
+并且对于字典里任意的k，有且仅有唯一的V与之对应
+可以对字典中的K-V对进行增、删、改、查操作
+'''
+# dict1 = {'name': 'Tom', 'age': 20, 'gender': 'male'}
+# dict2 = {}  # 空字典
+# dict3 = dict()  # 空字典的另一种形式
+# print(dict1, '\n', dict2, '\n', dict3)
+# dict1['name'] = 'Rose'  # 对K为name的V进行赋值
+# print(dict1)
+# dict1['id'] = 110  # 不存在K为id的键，所以新增一个K-V对
+# print(dict1)
+# del dict1['gender']  # 删除指定的K-V对
+# print(dict1)
+# dict1.clear()  # 清空字典，让字典变为空字典
+# print(dict1)
+
+# print(dict1['name'])
+# print(dict1['height'])  # 对于没有的K，报错
+
+# print(dict1.get('name'))
+# print(dict1.get('id', 110))
+# print(dict1.get('id'))
+
+# print(dict1.keys())
+# print(dict1.values())
+# print(dict1.items())
+
+# for key in dict1.keys():
+#     print(key, end=' ')
+# print()
+#
+# for value in dict1.values():
+#     print(value, end=' ')
+# print()
+#
+# for item in dict1.items():
+#     print(item, end=' ')
+# print()
+#
+# for key, value in dict1.items():
+#     print(f"{key} = {value}", end='; ')
+# print()
+
+# ------------集合------------
+'''
+集合具有确定性，无序性，去重性。所以集合中不会出现重复的数据，并且集合不支持下标。
+创建集合使用{...}或set(...)，但是创建空集合只能使用set()，因为{}将创建空字典。
+'''
+# s1 = {10, 20, 30, 40, 50}
+# print(s1)
+#
+# s2 = {10, 30, 20, 10, 30, 40, 30, 50}
+# print(s2)
+
+# s3 = set('abcdefgaaaaa')  # 会将str里的字符逐个加入集合
+# print(s3)
+
+# s4 = set()
+# print(type(s4))
+
+# s5 = {}
+# print(type(s5))
+
+# s1 = {10, 20}
+# s1.add(100)
+# s1.add(10)
+# print(s1)
+
+'''
+update(): 在集合中追加序列，如果追加的不是序列，报错
+'''
+# s1 = {10, 20}
+# # s1.update(100)
+# s1.update([100, 200, '10'])
+# s1.update('abc')
+# print(s1)
+
+'''
+remove(): 删除集合中的指定数据，如果数据不存在则报错
+'''
+# s1 = {10, 20}
+# s1.remove(10)
+# print(s1)
+
+'''
+discard(): 和remove一样，但是不会报错
+'''
+# s1.discard(10)
+# print(s1)
+
+'''
+pop(): 随机删除集合中的一个数据，并返回其值
+'''
+# del_num = s1.pop()
+# print(del_num)
+# print(s1)
+
+# print(10 in s1)
+# print(10 not in s1)
+
+# ------------对字符串、列表、元组、字典的公共操作------------
+'''
+运算符：
++       合并          字符串、列表、元组
+*       复制          字符串、列表、元组
+in      元素是否存在    字符串、列表、元组、集合、字典
+not in  元素是否不存在   字符串、列表、元组、集合、字典      
+'''
+# str1 = 'aa'
+# str2 = 'bb'
+# str3 = str1 + str2
+# print(str3)
+# list1 = [1, 2]
+# list2 = [10, 20]
+# list3 = list1 + list2
+# print(list3)
+# t1 = (1, 2)
+# t2 = (10, 20)
+# t3 = t1 + t2
+# print(t3)
+
+# print('-' * 10)
+# list1 = ['hello']
+# print(list1 * 4)
+# t1 = ('world',)
+# print(t1 * 4)
+
+# print('a' in 'abcd')
+# print('a' not in 'abcd')
+# list1 = ['a', 'b', 'c', 'd']
+# print('a' in list1)
+# print('a' not in list1)
+# t1 = ('a', 'b', 'c', 'd')
+# print('aa' in t1)
+# print('aa' not in t1)
+# set1 = {1, 2, 3, 4}
+# print(1 in set1)
+# print(1 not in set1)
+# dict1 = {'name': 'Alice', 'age': 22}
+# print('name' in dict1)
+# print('Alice' in dict1)
+
+'''
+len(): 计算容器中元素个数
+del或del(): 删除
+max(): 返回容器中元素最大值
+min(): 返回容器中元素最小值
+range(start, end, step): 生成从start到end的数字，步长为step，供for循环使用
+enumerate(): 将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，同时列出数据和数据下标，一般用在for循环当中
+'''
