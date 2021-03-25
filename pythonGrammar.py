@@ -887,3 +887,84 @@ min(): 返回容器中元素最小值
 range(start, end, step): 生成从start到end的数字，步长为step，供for循环使用
 enumerate(): 将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，同时列出数据和数据下标，一般用在for循环当中
 '''
+# str1 = 'abcdefg'
+# list1 = [10, 20, 30, 40]
+# t1 = (10, 20, 30, 40, 50)
+# s1 = (40, 20, 10, 30, 50)
+# dict1 = {'name': 'Rose', 'age': 18}
+
+# print(len(str1))
+# print(len(list1))
+# print(len(s1))
+# print(len(t1))
+# print(len(dict1))
+
+# del str1
+# # print(str1)
+# del (list1[0])
+# del list1[1]
+# print(list1)
+
+# print(max(str1))
+# print(max(list1))
+# print(min(t1))
+# print(min(s1))
+# print(max(dict1))
+# print(min(dict1))
+
+# for i in range(1, 10, 1):
+#     print(i, end=' ')
+# print()
+#
+# for i in range(1, 10, 2):
+#     print(i, end=' ')
+# print()
+#
+# for i in range(10):
+#     print(i, end=' ')
+# print()
+
+'''
+enumerate(可遍历对象, start=0)
+'''
+# list2 = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+# for i in enumerate(list2):
+#     print(i)
+# print()
+#
+# for index, char in enumerate(list2, start=1):
+#     print(f'下标是{index}, 对应的字符是{char}')
+# print()
+
+# print(tuple(list1))
+# print(tuple(s1))
+# print(list(t1))
+# print(list(s1))
+# print(set(list1))
+# print(set(t1))
+
+# ------------推导式------------
+# 列表推导式
+# list1 = [i for i in range(10)]
+# print(list1)
+# list2 = [i for i in range(10) if i % 2 == 0]
+# print(list2)
+# list3 = [i for i in range(0, 10, 2)]
+# print(list3)
+# list4 = [(i, j) for i in range(1, 5) for j in range(3)]
+# print(list4)
+
+# 字典推导式
+# dict1 = {i: i ** 2 for i in range(1, 6)}  # 指数运算符，相当于i的平方
+# print(dict1)
+# list1 = ['name', 'age', 'gender']
+# list2 = ['Tom', 20, 'man']
+# dict1 = {list1[i]: list2[i] for i in range(len(list1))}
+# print(dict1)
+# counts = {'MBP': 268, 'HP': 125, 'DELL': 201, 'Lenovo': 199, 'acer': 99}
+# count1 = {key: value for key, value in counts.items() if value >= 200}
+# print(count1)
+
+# list1 = [1, 1, 2, 3, 4, 4, 4, 5]
+# set1 = {i ** 2 for i in list1}
+# print(set1)
