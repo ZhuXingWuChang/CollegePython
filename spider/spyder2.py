@@ -16,6 +16,8 @@ headers = {
 }
 
 response = requests.get(url=url, params=params, headers=headers)
+
+# json()方法会返回对应的json字典
 page_text = response.json()
 for movie in page_text['subjects']:
     name = movie['title']
