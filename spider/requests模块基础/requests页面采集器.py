@@ -1,8 +1,9 @@
 import requests
 # step1 : 指定url
-url = 'https://search.bilibili.com/all'
+url = 'https://www.google.com/search?'
 keyWord = input('Enter a key word:')
-params = {'spm_id_from': keyWord}
+params = {'q': keyWord}
+# 面对UA检测, 我们使用UA伪装, 让爬虫使用浏览器的身份标识
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
                   ' (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36 Edg/89.0.774.63'}
