@@ -15,3 +15,16 @@
     - 解析的局部的文本内容都会在标签之间或者标签对应的属性中进行存储
         - 1.指定标签的定位
         - 2.对标签或者标签对应的属性中存储的数据值进行提取(解析)
+
+<div class="thumb">
+
+<a href="/article/124100788" target="_blank">
+<img src="//pic.qiushibaike.com/system/pictures/12410/124100788/medium/7CTALKQH3ISTI4SX.jpg" alt="糗事#124100788" class="illustration" width="100%" height="auto">
+</a>
+</div>
+
+提取正则: (正则表达式:regular expression)
+r_ex = <div class="thumb">.*?<img src="(.*?)" alt.*?</div>
+
+      //pic.qiushibaike.com/system/pictures/12420/124206673/medium/8NB1U7ZCCQM9SMKT.jpg
+https://pic.qiushibaike.com/system/pictures/12420/124206095/medium/OLEEPUFIGNDSP123.jpg
