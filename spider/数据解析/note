@@ -28,3 +28,22 @@ r_ex = <div class="thumb">.*?<img src="(.*?)" alt.*?</div>
 
       //pic.qiushibaike.com/system/pictures/12420/124206673/medium/8NB1U7ZCCQM9SMKT.jpg
 https://pic.qiushibaike.com/system/pictures/12420/124206095/medium/OLEEPUFIGNDSP123.jpg
+
+bs4进行数据解析(python独有)
+    数据解析的原理:
+        1.标签定位
+        2.提取标签/标签属性中存储的数据值
+    bs4数据解析的原理:
+        1.实例化一个BeautifulSoup对象,并且将页面源码数据加载到该对象中
+        2.通过BeautifulSoup对象中相关的属性或者方法进行标签定位和数据提取
+    环境安装:
+        安装bs4(从而使用BeautifulSoup对象)和lxml(一个解析器)
+    如何实例化BeautifulSoup对象:
+        1.from bs4 import BeautifulSoup
+        2.对象的实例化:
+            形式1:将对象的本地的html文档中的数据加载到该对象中
+                fp = open('./test.html', 'r', encoding='utf-8')
+                soup = BeautifulSoup(fp, 'lxml')
+            形式2:将互联网上获取的页面源码加载到该对象中
+                page_text = response.text
+                soup = BeautifulSoup(page_text, 'lxml')
