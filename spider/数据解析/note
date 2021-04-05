@@ -47,3 +47,18 @@ bs4进行数据解析(python独有)
             形式2:将互联网上获取的页面源码加载到该对象中
                 page_text = response.text
                 soup = BeautifulSoup(page_text, 'lxml')
+        3.提供的用于数据解析的方法和属性:
+            soup.tagName: 返回的是文档中第一次出现的tagName对应的标签
+            soup.find():
+                - soup.find('tagName'): 等于soup.tagName
+                - 属性定位: soup.find('div',class_/id/attr='song')
+            soup.find_all('tagName'): 返回一个列表,列表里面是符合要求的所有标签
+            soup.select():
+                - soup.select('某种选择器,比如id,class,tagName等'): 返回一个满足选择的列表
+                - 层级选择器:
+                    soup.select('层级1 > 层级2 > 层级3 > ...'): 返回该层级所有元素构成的列表
+                    soup.select('层级1 > 层级2 层级4'): 空格表示多个层级,大于号表示一个层级
+            soup.tagName.text/string/get_text(): 获取标签之间的文本数据
+                - text/get_text(): 可以获取某一个标签中所有的文本内容
+                - string: 只可以获取该标签下面直系的文本内容
+            soup.a['属性名称']: 标签中的属性值
