@@ -28,3 +28,37 @@ r_ex = <div class="thumb">.*?<img src="(.*?)" alt.*?</div>
 
       //pic.qiushibaike.com/system/pictures/12420/124206673/medium/8NB1U7ZCCQM9SMKT.jpg
 https://pic.qiushibaike.com/system/pictures/12420/124206095/medium/OLEEPUFIGNDSP123.jpg
+
+bs4进行数据解析(python独有)
+    数据解析的原理:
+        1.标签定位
+        2.提取标签/标签属性中存储的数据值
+    bs4数据解析的原理:
+        1.实例化一个BeautifulSoup对象,并且将页面源码数据加载到该对象中
+        2.通过BeautifulSoup对象中相关的属性或者方法进行标签定位和数据提取
+    环境安装:
+        安装bs4(从而使用BeautifulSoup对象)和lxml(一个解析器)
+    如何实例化BeautifulSoup对象:
+        1.from bs4 import BeautifulSoup
+        2.对象的实例化:
+            形式1:将对象的本地的html文档中的数据加载到该对象中
+                fp = open('./test.html', 'r', encoding='utf-8')
+                soup = BeautifulSoup(fp, 'lxml')
+            形式2:将互联网上获取的页面源码加载到该对象中
+                page_text = response.text
+                soup = BeautifulSoup(page_text, 'lxml')
+        3.提供的用于数据解析的方法和属性:
+            soup.tagName: 返回的是文档中第一次出现的tagName对应的标签
+            soup.find():
+                - soup.find('tagName'): 等于soup.tagName
+                - 属性定位: soup.find('div',class_/id/attr='song')
+            soup.find_all('tagName'): 返回一个列表,列表里面是符合要求的所有标签
+            soup.select():
+                - soup.select('某种选择器,比如id,class,tagName等'): 返回一个满足选择的列表
+                - 层级选择器:
+                    soup.select('层级1 > 层级2 > 层级3 > ...'): 返回该层级所有元素构成的列表
+                    soup.select('层级1 > 层级2 层级4'): 空格表示多个层级,大于号表示一个层级
+            soup.tagName.text/string/get_text(): 获取标签之间的文本数据
+                - text/get_text(): 可以获取某一个标签中所有的文本内容
+                - string: 只可以获取该标签下面直系的文本内容
+            soup.a['属性名称']: 标签中的属性值
